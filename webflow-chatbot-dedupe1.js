@@ -215,6 +215,17 @@ function saveConversationHistory() {
   
     document.head.appendChild(style);
   }
+
+  function resetAndPopulateChatWidget() {
+    // Clear the chat widget
+    const messagesWrapper = document.querySelector(".messages-wrapper");
+    messagesWrapper.innerHTML = '';
+  
+    // Populate the chat widget with the conversation history
+    conversationHistory
+      .filter(message => message.role !== "system")
+      .forEach(message => addMessageToWidget(message.content, message.role));
+  }  
   
   function sendToPipedream(message, callback) {
     conversationHistory.push({ role: "user", content: message });
@@ -334,15 +345,13 @@ function saveConversationHistory() {
     .filter(message => message.role !== "system")
     .forEach(message => addMessageToWidget(message.content, message.role));
   
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelector(".clear-chat-button").addEventListener("click", function () {
-          clearChatHistory();
-        });
-      
-        // Move the conversation history population code inside the event listener
-        conversationHistory
-          .filter(message => message.role !== "system")
-          .forEach(message => addMessageToWidget(message.content, message.role));
-      });
+  resetAndPopulateChatWidget();
+
+  document.addEventListener("DOMContentLoaded", function() {
+   document.querySelector(".clear-chat-button").addEventListener("click", function () {
+    clearChatHistory();
+  });
+});
+
       
   
