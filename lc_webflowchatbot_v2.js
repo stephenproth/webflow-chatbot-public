@@ -94,7 +94,7 @@ function handleUserOption( e )
   {
     role: "user",
     content: e
-  } ), saveConversationHistory(), "Other" === e ? addMessageToWidget( "Ask me anything! I'm a general knowledge AI ready to help!", "bot" ) : "Shop" === e ? addMessageToWidget( "We offer a wide range of succulents and cacti delivered right to your front door: <a href='https://leafandclay.co/#' target='_blank'>Shop Now</a>", "bot" ) : "Blog" === e ? addMessageToWidget( "Check out our blog for more helpful resources and guides on succulent care: <a href='https://leafandclay.co/blogs/blog' target='_blank'>Learn More</a>", "bot" ) : "Get in Touch" === e && addMessageToWidget( "You can contact us with any questions at <a href='https://leafandclay.co/' target='_blank'>here!</a>", "bot" )
+  } ), saveConversationHistory(), "Other" === e ? addMessageToWidget( "Ask me anything! I'm an expert botanist who specializes in succulents!", "bot" ) : "Shop" === e ? addMessageToWidget( "We offer a wide range of succulents and cacti delivered right to your front door: <a href='https://leafandclay.co/#' target='_blank'>Shop Now</a>", "bot" ) : "Blog" === e ? addMessageToWidget( "Check out our blog for more helpful resources and guides on succulent care: <a href='https://leafandclay.co/blogs/blog' target='_blank'>Learn More</a>", "bot" ) : "Get in Touch" === e && addMessageToWidget( "You can contact us with any questions at <a href='https://leafandclay.co/' target='_blank'>here!</a>", "bot" )
 }
 
 function addSpinnerStyles()
